@@ -11,6 +11,16 @@ class ToolBar(QToolBar):
         open_action = QAction("📂 Dosya Aç", self)
         open_action.triggered.connect(self.open_file)
         self.addAction(open_action)
+        
+        # "Analiz Et" butonu
+        open_action = QAction("🔎 Analiz Et", self)
+        #open_action.triggered.connect(self.start_analysis)
+        self.addAction(open_action)
+        
+        
+    # ↓↓↓ Analiz Et Buton Fonksiyonu Yazılmalı ↓↓↓
+    # def start_analysis(self):
+        
 
     def open_file(self):
         file_path, _ = QFileDialog.getOpenFileName(self, "Dosya Seç", "", "Medya Dosyaları (*.png *.jpg *.bmp *.mp4 *.avi)")

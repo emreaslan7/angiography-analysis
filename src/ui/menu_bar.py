@@ -1,4 +1,5 @@
-from PyQt5.QtWidgets import QMenuBar, QAction, QFileDialog, QMessageBox
+from PyQt5.QtWidgets import QMenuBar, QAction, QFileDialog, QMessageBox,QWidget,QSizePolicy,QWidgetAction
+from PyQt5.QtCore import Qt 
 import sys
 
 
@@ -8,6 +9,10 @@ class MenuBar(QMenuBar):
 
         # "Dosya" menüsünü oluştur
         file_menu = self.addMenu("Dosya")
+        
+        # "Yardım" menüsünü oluştur
+        help_menu = self.addMenu("Yardım")
+        help_menu.triggered.connect(self.exit_app)
 
         # "Dosya Aç" seçeneği
         open_action = QAction("Dosya Aç", self)
