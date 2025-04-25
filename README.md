@@ -1,52 +1,76 @@
-# PyQt Desktop Application for Angiography Analysis
+# Angiography Analysis Tool
 
-This project is a desktop application developed using PyQt that automates the analysis of angiography data through pathological region detection. The application utilizes a tracking algorithm and a segmentation model to compute the radial wall strain parameters.
+This project is a **PyQt5-based application** designed for analyzing angiography images and videos. It provides tools for object detection, segmentation, and media playback, making it a comprehensive solution for medical imaging analysis.
 
-## Project Structure
+## Features
 
-```
-pyqt-desktop-app
-├── src
-│   ├── main.py                  # Entry point of the application
-│   ├── ui
-│   │   └── main_window.ui       # UI layout designed with Qt Designer
-│   ├── controllers
-│   │   └── main_controller.py    # Logic for handling user interactions
-│   ├── models
-│   │   └── segmentation_model.py  # Segmentation model for pathological detection
-│   ├── views
-│   │   └── main_view.py          # UI rendering and display updates
-│   └── utils
-│       └── tracking_algorithm.py   # Functions for the tracking algorithm
-├── requirements.txt              # Project dependencies
-├── README.md                     # Project documentation
-└── .gitignore                    # Files to ignore in version control
-```
+- **Image and Video Support**: Load and display images (`.png`, `.jpg`, `.bmp`) and videos (`.mp4`, `.avi`).
+- **Object Detection**: Toggle visibility of object detection components.
+- **Segmentation**: Toggle visibility of segmentation components.
+- **Video Playback**: Play, pause, stop, and seek through video files.
+- **Interactive Toolbar**: Easy access to file operations and analysis tools.
 
-## Setup Instructions
+## Installation
 
 1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd pyqt-desktop-app
+
+   ```bash
+   git clone https://github.com/emreaslan7/angiography-analysis.git
+   cd angiography-analysis
    ```
 
-2. Install the required dependencies:
-   ```
+2. Install dependencies
+
+   ```python
    pip install -r requirements.txt
    ```
 
 3. Run the application:
-   ```
+   ```python
    python src/main.py
    ```
 
+## Project Structure
+
+```txt
+angiography-analysis/
+├── src/
+│   ├── models/
+│   │   ├── object-detection-v1.pt
+│   ├── functions/
+│   │   ├── detection_utils.py
+│   │   ├── image_utils.py
+│   │   ├── video_utils.py
+│   ├── ui/
+│   │   ├── components/
+│   │   ├── tool_bar.py
+│   │   ├── video_player.py
+│   │   ├── menu_bar.py.py
+│   │   ├── main_window.py
+│   ├── main.py
+│   ├── state_manager.py
+├── output/
+│   ├── annotated_result_video.mp4
+│   ├── annotated_result.jpg
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+
 ## Usage
 
-- Launch the application to access the main window.
-- Load angiography data for analysis.
-- The application will automatically detect pathological regions and compute the radial wall strain parameters.
+1. Launch the application.
+2. Use the toolbar to open an image or video file.
+3. Toggle object detection or segmentation tools as needed.
+4. For videos, use playback controls to navigate through frames.
 
-## Overview
+## Requirements
 
-This application aims to streamline the analysis of angiography data, providing a user-friendly interface for medical professionals to efficiently detect and analyze pathological regions. The integration of machine learning models enhances the accuracy and reliability of the analysis.
+- Python 3.10+
+- PyQt5
+- OpenCV
+- NumPy
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.

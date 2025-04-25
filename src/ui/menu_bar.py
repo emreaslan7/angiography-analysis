@@ -7,7 +7,7 @@ class MenuBar(QMenuBar):
         super().__init__(parent)
 
         # "Dosya" menüsünü oluştur
-        file_menu = self.addMenu("Dosya")
+        file_menu = self.addMenu("Main")
 
         # "Dosya Aç" seçeneği
         open_action = QAction("Dosya Aç", self)
